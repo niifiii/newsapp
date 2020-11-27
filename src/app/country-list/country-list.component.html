@@ -1,0 +1,36 @@
+    <div class='container'>
+    <p>country-list works!</p>
+
+    <br>------------------------<br>
+    APi Key setting Child component
+        {{apiKeyIsSet}}
+
+    <app-api-key-setting *ngIf='apiKeyIsSet'></app-api-key-setting>
+    <br>--------------------------
+        <div> <!-- view 1 -->
+            <h1 class='display-4'>Countries</h1>
+            <button type='button'> Settings (Set Api Key) </button>
+            <table class="table">
+                <thead class="thead-dark">
+                <tr>
+                    <th scope="col">Country</th>
+                    <th scope="col">Flag</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <th scope="row">UAE</th>
+                    <td>Flag</td>
+                </tr>
+                <tr>
+                    <th scope="row">China</th>
+                    <td>Flag</td>
+                </tr>
+                <tr>
+                    <th scope="row">US</th>
+                    <td>Flag</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+ </div>

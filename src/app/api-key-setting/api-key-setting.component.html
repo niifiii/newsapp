@@ -1,0 +1,24 @@
+<p>api-key-setting works!</p>
+
+<h1 class='display-4'>Settings</h1>
+<h4 class="text-muted">NewsAPI.org</h4>
+
+{{apiKeyForm.value | json}}
+
+<br><br>
+
+apiKey prop: {{apiKey}}
+
+<form [formGroup]='apiKeyForm'>
+    <div class="form-group">
+      <label for="inputApiKey">API key:</label>
+      <input type="text" class="form-control" id="inputApiKey" name='inputApiKey' formControlName='apiKey'>
+      <small id="emailHelp" class="form-text text-muted">Please enter the API key from newsapi.org</small>
+    </div>
+
+    <button type='button' class='btn btn-secondary'> Back </button>
+    <button type='button' class='btn btn-primary ml-1'> Delete </button>
+    <button type="submit" class="btn btn-primary ml-1" (click)="addApiKey()">Add</button>
+
+  </form>
+
