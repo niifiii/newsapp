@@ -12,15 +12,23 @@ export class CountryListComponent implements OnInit {
   apiKeyIsSet = true;
   countryListTable
   constructor(private indexDB: IndexedDBService) { }
+  countryListArray = [];
 
   ngOnInit() {
     //let apiKey = this.indexDB.getApiKey();
     //console.log(apiKey, 'hello');
     this.countryListTable = this.indexDB.getCountryListTable();
-    const countryListArray: CountryList[] = this.countryListTable.toArray()
-    console.log(countryListArray);
+    const countryListArray: CountryList[] = this.countryListTable.toArray().then ( result => {
+      console.log('myarray', result)
+      for (let item of result) {
+        this.countryListArray.push(item.name);
+      }
+    })
+    console.log(countryListArray, '<-----------------------------------');
   }
 
-  
+  toggleSetApiKey() {
+    this.apiKeyIsSet = !this.apiKeyIsSet;
+  }
 
 }

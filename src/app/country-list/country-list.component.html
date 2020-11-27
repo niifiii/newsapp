@@ -9,7 +9,7 @@
     <br>--------------------------
         <div> <!-- view 1 -->
             <h1 class='display-4'>Countries</h1>
-            <button type='button'> Settings (Set Api Key) </button>
+            <button type='button' (click)='toggleSetApiKey()'> Settings (Set Api Key) </button>
             <table class="table">
                 <thead class="thead-dark">
                 <tr>
@@ -18,18 +18,11 @@
                 </tr>
                 </thead>
                 <tbody>
-                <tr>
-                    <th scope="row">UAE</th>
+                <tr *ngFor="let country of countryListArray">
+                    <th scope="row">{{country}}</th>
                     <td>Flag</td>
                 </tr>
-                <tr>
-                    <th scope="row">China</th>
-                    <td>Flag</td>
-                </tr>
-                <tr>
-                    <th scope="row">US</th>
-                    <td>Flag</td>
-                </tr>
+ 
                 </tbody>
             </table>
         </div>
